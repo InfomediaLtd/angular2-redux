@@ -8,7 +8,7 @@ System.config({
 
   packages: {
     "app": {
-      "main": "main",
+      "main": "index",
       "defaultExtension": "ts"
     }
   },
