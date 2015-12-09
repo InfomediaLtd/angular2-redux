@@ -3,8 +3,7 @@
  */
 export class AppStore {
 
-    public getState  ungeons
-    :()=>any;
+    public getState  :()=>any;
     public subscribe :(subscribeFunction:(state)=>any)=>()=>any;
     public dispatch  :(action)=>any;
 
