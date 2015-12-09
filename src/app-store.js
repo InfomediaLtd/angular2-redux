@@ -13,13 +13,13 @@ var AppStore = (function () {
         this.dispatch = function (action) {
             return store.dispatch(action);
         };
-        this.createDispatcher = function (actionCreator) {
+        this.createDispatcher = function (actionCreator, context) {
             return function () {
                 var args = [];
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i - 0] = arguments[_i];
                 }
-                return store.dispatch(actionCreator.apply(void 0, args));
+                return store.dispatch(actionCreator.call.apply(actionCreator, [context].concat(args)));
             };
         };
     }
