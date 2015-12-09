@@ -3,9 +3,9 @@
  */
 export class AppStore {
 
-    public getState:()=>any;
-    public subscribe:(subscribeFunction:(state)=>any)=>()=>any;
-    public dispatch:(action)=>any;
+    public getState  :()=>any;
+    public subscribe :(subscribeFunction:(state)=>any)=>()=>any;
+    public dispatch  :(action)=>any;
 
     constructor(store:any) {
         this.getState = () => {
