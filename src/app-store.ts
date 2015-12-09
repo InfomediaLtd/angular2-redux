@@ -3,7 +3,8 @@
  */
 export class AppStore {
 
-    public getState  :()=>any;
+    public getState  ungeons
+    :()=>any;
     public subscribe :(subscribeFunction:(state)=>any)=>()=>any;
     public dispatch  :(action)=>any;
 
@@ -13,7 +14,7 @@ export class AppStore {
         };
         this.subscribe = (subscribeFunction:(state)=>any) => {
             // decorate the subscription with the state passed in as a parameter
-            return store.subscribe(() => subscribeFunction(this.getState()));
+            return store.subscribe(() => subscribeFunction(store.getState()));
         };
         this.dispatch = (action) => {
             return store.dispatch(action);
