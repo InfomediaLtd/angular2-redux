@@ -9,7 +9,4 @@ out
 .idea/
 .idea_modules/
 
-**.js
-**.js.map
-
 !config.js

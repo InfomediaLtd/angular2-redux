@@ -1,14 +1,31 @@
 {
   "name": "angular2-redux",
   "version": "1.0.0",
-  "homepage": "https://github.com/InfomediaLtd/angular2-redux",
-  "main": "src/index.ts",
-  "jspm": {
-    "directories": {
-      "baseURL": "/"
-    },
-    "devDependencies": {
-      "typescript": "npm:typescript@^1.6.2"
-    }
+  "description": "Wrapper components for using Redux in an Angular2 application",
+  "main": "src/index.js",
+  "scripts": {
+    "prepublish": "tsc -p src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InfomediaLtd/angular2-redux.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "redux"
+  ],
+  "author": "Ruby Boyarski <rboyarski@infomedia.com.au>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InfomediaLtd/angular2-redux/issues"
+  },
+  "homepage": "https://github.com/InfomediaLtd/angular2-redux#readme",
+  "peerDependencies": {
+    "angular2": "^2.0.x||^2.0.0-alpha.45",
+    "redux": "^3.x"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0"
   }
 }

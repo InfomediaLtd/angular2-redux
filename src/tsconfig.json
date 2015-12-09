@@ -7,8 +7,5 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  },
-  "exclude": [
-    "jspm_packages"
-  ]
+  }
 }
