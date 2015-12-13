@@ -1,3 +1,4 @@
 import {AppStore} from "./app-store"
+import {Actions} from "./actions"
 
-export {AppStore}
+export {AppStore,Actions}
