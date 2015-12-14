@@ -1,14 +1,17 @@
 {
   "name": "angular2-redux",
-  "version": "1.0.4",
+  "version": "0.0.0-semantically-released",
   "description": "Wrapper components for using Redux in an Angular2 application",
   "main": "src/index.js",
   "scripts": {
-    "prepublish": "tsc -p src"
+    "commit": "git-cz",
+    "test": "echo 'no tests yet'",
+    "prepublish": "tsc -p src",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InfomediaLtd/angular2-redux.git"
+    "url": "https://github.com/InfomediaLtd/angular2-redux.git"
   },
   "keywords": [
     "angular",
@@ -26,6 +29,14 @@
     "redux": "^3.x"
   },
   "devDependencies": {
+    "commitizen": "^2.4.6",
+    "cz-conventional-changelog": "^1.1.5",
+    "semantic-release": "^4.3.5",
     "tsc": "^1.20150623.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
