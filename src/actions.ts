@@ -6,6 +6,7 @@ import {AppStore} from "./app-store"
 export class Actions {
 
     createDispatcher(appStore:AppStore, action:(...n:any[])=>any):()=>void {
+        console.log("here");
         return (...n)=>appStore.dispatch(action.call(this, ...n))
     }
 
