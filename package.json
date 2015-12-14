@@ -2,11 +2,11 @@
   "name": "angular2-redux",
   "version": "0.0.0-semantically-released",
   "description": "Wrapper components for using Redux in an Angular2 application",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
-    "clean": "rimraf src/**/*.js src/**/*.js.map",
-    "build": "tsc -p src",
+    "clean": "rimraf dist ",
+    "build": "tsc -p src --outDir dist",
     "test": "karma start",
     "build-and-test": "npm run clean && npm run build && npm run test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
