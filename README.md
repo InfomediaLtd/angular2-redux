@@ -1,5 +1,10 @@
 # Angular2 Redux
 
+[![travis build](https://img.shields.io/travis/InfomediaLtd/angular2-redux.svg?style=flat-square)](https://travis-ci.org/InfomediaLtd/angular2-redux)
+[![version](https://img.shields.io/npm/v/angular2-redux.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux)
+[![downloads](https://img.shields.io/npm/dm/angular2-redux.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux)
+[![MIT Licence](https://img.shields.io/npm/l/angular2-redux.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
 Wrapper components for using Redux in an Angular2 application.
 
 See example here: [https://github.com/InfomediaLtd/angular2-tutorial/tree/master/7-redux](https://github.com/InfomediaLtd/angular2-tutorial/tree/master/7-redux)
