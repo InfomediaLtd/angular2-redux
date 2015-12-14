@@ -6,9 +6,8 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "rimraf src/**/*.js src/**/*.js.map",
-    "build": "tsc",
+    "build": "tsc -p src",
     "test": "karma start",
-    "prepublish": "tsc -p src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
