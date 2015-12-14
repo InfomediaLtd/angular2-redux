@@ -37,6 +37,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.19",
+    "rimraf": "^2.4.4",
     "semantic-release": "^4.3.5",
     "tsc": "^1.20150623.0"
   },
