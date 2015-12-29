@@ -7,7 +7,7 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "rimraf dist ",
-    "build": "tsc --outDir dist",
+    "build": "tsc --outDir dist --declaration",
     "test": "karma start",
     "build-and-test": "npm run clean && npm run build && npm run test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
