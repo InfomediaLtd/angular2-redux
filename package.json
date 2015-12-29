@@ -3,6 +3,7 @@
   "version": "0.0.0-semantically-released",
   "description": "Wrapper components for using Redux in an Angular2 application",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "commit": "git-cz",
     "clean": "rimraf dist ",
