@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/InfomediaLtd/angular2-redux#readme",
   "peerDependencies": {
-    "angular2": "^2.0.x||^2.0.0-alpha.45",
+    "angular2": "^2.0.x||^2.0.0-beta.0",
     "redux": "^3.x"
   },
   "devDependencies": {

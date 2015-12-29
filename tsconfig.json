@@ -8,5 +8,10 @@
     "removeComments": false,
     "noImplicitAny": false,
     "declaration": true
-  }
+  },
+  "exclude": [
+    "jspm_packages",
+    "node_modules",
+    "dist"
+  ]
 }
