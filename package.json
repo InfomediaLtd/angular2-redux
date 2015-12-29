@@ -7,7 +7,7 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "rimraf dist ",
-    "build": "tsc -p src --outDir dist",
+    "build": "tsc --outDir dist",
     "test": "karma start",
     "build-and-test": "npm run clean && npm run build && npm run test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -29,10 +29,11 @@
   },
   "homepage": "https://github.com/InfomediaLtd/angular2-redux#readme",
   "peerDependencies": {
-    "angular2": "^2.0.x||^2.0.0-beta.0",
     "redux": "^3.x"
   },
   "devDependencies": {
+    "typescript": "^1.6.2",
+    "redux": "^3.x",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
     "ghooks": "^1.0.1",
