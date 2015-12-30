@@ -6,19 +6,19 @@ export class AppStore {
     /**
      * Get current state
      */
-    public getState         :()=>any;
+    public getState:()=>any;
     /**
      * subscribe to a callback with the state
      */
-    public subscribe        :(subscribeFunction:(state)=>void)=>()=>void;
+    public subscribe:(subscribeFunction:(state)=>void)=>()=>void;
     /**
      * Dispatch an action
      */
-    public dispatch         :(action)=>void;
+    public dispatch:(action)=>void;
     /**
      * Create a dispatcher as a curried function using the passed in action creator and an optional context
      */
-    public createDispatcher :(actionCreator, context)=>(...n:any[])=>void;
+    public createDispatcher:(actionCreator, context)=>(...n:any[])=>void;
 
     constructor(store:any) {
         this.getState = () => {
