@@ -15,13 +15,11 @@ before_install:
 before_script:
   - npm prune
 script:
-  - echo $JSPM_GITHUB_AUTH_TOKEN
   - jspm registry export github
   - jspm config registries.github.remote https://github.jspm.io
   - jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
   - jspm config registries.github.maxRepoSize 100
   - jspm config registries.github.handler jspm-github
-  - jspm registry export github
   - jspm install
   - npm run test-and-dist
 after_success:
