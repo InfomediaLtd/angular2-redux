@@ -11,7 +11,8 @@
     "dist": "gulp",
     "test": "karma start",
     "test-once": "karma start --single-run",
-    "test-and-dist": "npm run clean && npm run lint && npm run test-once && npm run dist",
+    "test-and-lint-and-dist": "npm run clean && npm run lint && npm run test-once && npm run dist",
+    "test-and-dist": "npm run clean && npm run test-once && npm run dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -71,7 +72,7 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run test-and-dist"
+      "pre-commit": "npm run test-and-lint-and-dist"
     }
   },
   "jspm": {
