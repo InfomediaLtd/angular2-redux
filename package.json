@@ -1,4 +1,4 @@
-{
+{ 
   "name": "angular2-redux",
   "version": "0.0.0-semantically-released",
   "description": "Wrapper components for using Redux in an Angular2 application",
