@@ -37,7 +37,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "angular2": "^2.0.0-beta.1",
+    "angular2": "^2.0.0-beta.2",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
     "es6-shim": "^0.33.3",
