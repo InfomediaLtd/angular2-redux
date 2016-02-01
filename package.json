@@ -75,12 +75,14 @@
       "pre-commit": "npm run test-and-lint-and-dist"
     }
   },
+  "jspmNodeConversion": false,
   "jspm": {
-    "dependencies": {},
-    "devDependencies": {
+    "dependencies": {
       "angular2": "npm:angular2@^2.0.0-beta.2",
       "redux": "npm:redux@^3.1.7",
-      "redux-thunk": "npm:redux-thunk@^1.0.3",
+      "redux-thunk": "npm:redux-thunk@^1.0.3"
+    },
+    "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"
     }
   }

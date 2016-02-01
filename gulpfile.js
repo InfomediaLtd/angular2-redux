@@ -4,26 +4,43 @@ var runSequence = require('run-sequence');
 var tsc = require('gulp-typescript');
 
 var paths = {
-    dist: './dist'
+    dist: './dist',
+    sourceFiles: ['./src/*'],
+    distSources: './dist/src',
+    distSourcesFiles: ['./dist/src/*']
 };
 
 gulp.task('clean', function () {
     return gulp.src(paths.dist, {read: false}).pipe(rimraf({force: true}));
 });
 
+gulp.task('copySources', function(){
+    return gulp.src(paths.sourceFiles).pipe(gulp.dest(paths.dist));
+});
+
 gulp.task('tsc', function () {
     var tsProject = tsc.createProject('tsconfig.json', {outDir:"dist",declaration:true});
-    var tsResult = tsProject.src()
-        .pipe(tsc(tsProject));
+    var tsResult = tsProject.src().pipe(tsc(tsProject));
     tsResult.pipe(gulp.dest(paths.dist));
-    tsResult.dts.pipe(gulp.dest(paths.dist));
+    return tsResult.dts.pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy', function(){
+    return gulp.src(paths.distSourcesFiles).pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('cleanup', function () {
+    return gulp.src(paths.distSources, {read: false}).pipe(rimraf({force: true}));
 });
 
 // entry point - run tasks in a sequence
 gulp.task('default', function (callback) {
     runSequence(
         'clean',
+        'copySources',
         'tsc',
+        'copy',
+        'cleanup',
         function (error) {
             if (error) {
                 console.log(error.message);
