@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "postinstall": "jspm install",
     "lint": "tslint src/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "commit": "git-cz",
     "clean": "rimraf dist",
