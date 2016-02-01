@@ -12,6 +12,11 @@ See example here: [https://github.com/InfomediaLtd/angular2-tutorial/tree/master
 
 A full Angular 2 Redux demo can be found here: [https://github.com/InfomediaLtd/angular2-redux-example](https://github.com/InfomediaLtd/angular2-redux-example)
 
-
+When updating code follow these commands to check it in:
+```
+git add *
+npm run commit
+git push origin master
+```
 
 
