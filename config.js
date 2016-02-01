@@ -19,8 +19,9 @@ System.config({
     "test": {
       "main": "sanity-test.spec",
       "defaultExtension": "ts"
-    },
+    }
   },
+
   map: {
     "angular2": "npm:angular2@2.0.0-beta.2",
     "redux": "npm:redux@3.1.7",

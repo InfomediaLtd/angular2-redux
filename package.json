@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
+    "postinstall": "jspm install",
     "lint": "tslint src/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "commit": "git-cz",
     "clean": "rimraf dist",
@@ -30,16 +31,18 @@
     "url": "https://github.com/InfomediaLtd/angular2-redux/issues"
   },
   "homepage": "https://github.com/InfomediaLtd/angular2-redux#readme",
-  "peerDependencies": {},
-  "dependencies": {
+  "peerDependencies": {
     "redux": "^3.1.7",
     "redux-thunk": "^1.0.3"
   },
+  "dependencies": {},
   "devDependencies": {
+    "redux": "^3.1.7",
+    "redux-thunk": "^1.0.3",
     "angular2": "^2.0.0-beta.2",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
-    "es6-shim": "^0.34.2",
+    "es6-shim": "^0.33.3",
     "ghooks": "^1.0.1",
     "gulp": "^3.9.0",
     "gulp-rimraf": "^0.2.0",
@@ -54,8 +57,10 @@
     "karma-phantomjs-launcher": "^0.2.3",
     "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",
+    "reflect-metadata": "0.1.2",
     "rimraf": "^2.4.4",
     "run-sequence": "^1.1.5",
+    "rxjs": "5.0.0-beta.0",
     "semantic-release": "^4.3.5",
     "tsc": "^1.20150623.0",
     "tslint": "^3.2.1",
