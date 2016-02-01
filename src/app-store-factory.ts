@@ -17,7 +17,7 @@ export function createAppStoreFactory(reducers) {
         const enhancers = compose(middlewareEnhancer, applyDevTools());
         const createStoreWithEnhancers = enhancers(createStore);
 
-        if (typeof reducers == "object") {
+        if (typeof reducers === "object") {
             // it's not a single reducer so we need to combine the reducers on the object properties
             reducers = combineReducers(reducers);
         }
