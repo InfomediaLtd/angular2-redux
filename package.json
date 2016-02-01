@@ -37,9 +37,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "redux": "^3.1.7",
-    "redux-thunk": "^1.0.3",
-    "angular2": "^2.0.0-beta.2",
+    "angular2": "^2.0.0-beta.1",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
     "es6-shim": "^0.33.3",
@@ -57,6 +55,8 @@
     "karma-phantomjs-launcher": "^0.2.3",
     "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",
+    "redux": "^3.1.7",
+    "redux-thunk": "^1.0.3",
     "reflect-metadata": "0.1.2",
     "rimraf": "^2.4.4",
     "run-sequence": "^1.1.5",
@@ -76,7 +76,6 @@
     }
   },
   "jspm": {
-    "jspmNodeConversion": false,
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-beta.2",
       "redux": "npm:redux@^3.1.7",
