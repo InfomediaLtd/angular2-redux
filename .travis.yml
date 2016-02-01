@@ -23,7 +23,6 @@ script:
   - jspm install
   - npm run test-and-dist
 after_success:
-  - sed -i.bak "s/\"jspm\": {/\"old_jspm\": {/" package.json
   - npm run semantic-release
 branches:
   except:
