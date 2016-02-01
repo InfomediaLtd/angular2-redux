@@ -1,12 +1,7 @@
 /** DRAFT **/
 import {AppStore} from "./app-store";
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
-
-import thunkMiddleware from "redux-thunk"
-console.log("thunkMiddleware",thunkMiddleware);
-
-import * as tMiddleware from "redux-thunk"
-console.log("tMiddleware",tMiddleware);
+import * as thunkMiddleware from "redux-thunk"
 
 /**
  * Factory for app store
