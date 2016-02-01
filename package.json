@@ -7,10 +7,11 @@
   "scripts": {
     "lint": "tslint src/**/*.ts -s node_modules/tslint-stylish -t stylish",
     "commit": "git-cz",
-    "clean": "rimraf dist ",
-    "build": "tsc --outDir dist --declaration",
+    "clean": "rimraf dist",
+    "dist": "gulp",
     "test": "karma start",
-    "build-and-test": "npm run clean && npm run lint && npm run test && npm run build",
+    "test-once": "karma start --single-run",
+    "test-and-dist": "npm run clean && npm run lint && npm run test-once && npm run dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -29,21 +30,32 @@
     "url": "https://github.com/InfomediaLtd/angular2-redux/issues"
   },
   "homepage": "https://github.com/InfomediaLtd/angular2-redux#readme",
-  "peerDependencies": {
-    "redux": "^3.x"
+  "peerDependencies": {},
+  "dependencies": {
+    "redux": "^3.1.7",
+    "redux-thunk": "^1.0.3"
   },
   "devDependencies": {
+    "angular2": "^2.0.0-beta.2",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
+    "es6-shim": "^0.34.2",
     "ghooks": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-rimraf": "^0.2.0",
     "gulp-tslint": "^4.2.2",
+    "gulp-typescript": "^2.10.0",
     "jasmine-core": "^2.4.1",
-    "karma": "^0.13.15",
+    "jspm": "^0.16.25",
+    "karma": "^0.13.19",
     "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-jspm": "^2.0.2",
+    "karma-mocha-reporter": "^1.1.5",
+    "karma-phantomjs-launcher": "^0.2.3",
     "phantomjs": "^1.9.19",
-    "redux": "^3.x",
+    "phantomjs-polyfill": "0.0.1",
     "rimraf": "^2.4.4",
+    "run-sequence": "^1.1.5",
     "semantic-release": "^4.3.5",
     "tsc": "^1.20150623.0",
     "tslint": "^3.2.1",
@@ -55,7 +67,17 @@
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run build-and-test"
+      "pre-commit": "npm run test-and-dist"
+    }
+  },
+  "jspm": {
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-beta.2",
+      "redux": "npm:redux@^3.1.7",
+      "redux-thunk": "npm:redux-thunk@^1.0.3"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
     }
   }
 }

@@ -1,6 +1,8 @@
 node_modules
 dist
+build
 npm-debug.log
+typings
 
 *.iml
 .idea/
@@ -8,3 +10,6 @@ npm-debug.log
 src/**/*.js
 src/**/*.js.map
 src/**/*.d.ts
+test/**/*.js
+test/**/*.js.map
+test/**/*.d.ts

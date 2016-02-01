@@ -12,7 +12,7 @@ System.config({
   },
 
   packages: {
-    "app": {
+    "src": {
       "main": "main",
       "defaultExtension": "ts"
     },
