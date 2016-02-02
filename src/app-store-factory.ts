@@ -13,7 +13,13 @@ export function createAppStoreFactory(reducers) {
         const applyDevTools = () => isDebug ? window["devToolsExtension"]() : f => f;
         /* tslint:enable */
 
-        const middlewareEnhancer = applyMiddleware(thunkMiddleware);
+        let thunkMiddlewareToUse = thunkMiddleware;
+        // Fix for import issues
+        if (thunkMiddlewareToUse && thunkMiddlewareToUse.default) {
+            thunkMiddlewareToUse = thunkMiddlewareToUse.default;
+        }
+
+        const middlewareEnhancer = applyMiddleware(thunkMiddlewareToUse);
         const enhancers = compose(middlewareEnhancer, applyDevTools());
         const createStoreWithEnhancers = enhancers(createStore);
 

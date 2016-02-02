@@ -29,7 +29,7 @@ export function main() {
 
       var someActions = new SomeActions();
 
-      AppStore appStoreMock = createAppStoreMock();
+      AppStore appStoreMock = <AppStore>createAppStoreMock();
       const dispatcherFunction = someActions.createDispatcher(
         appStoreMock,
         someActions.someAction1

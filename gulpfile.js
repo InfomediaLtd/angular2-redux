@@ -6,7 +6,7 @@ var tsc = require('gulp-typescript');
 var paths = {
     dist: './dist',
     sourceFiles: ['./src/*'],
-    distSources: './dist/src',
+    toDelete: ['./dist/src','./dist/test'],
     distSourcesFiles: ['./dist/src/*']
 };
 
@@ -30,7 +30,7 @@ gulp.task('copy', function(){
 });
 
 gulp.task('cleanup', function () {
-    return gulp.src(paths.distSources, {read: false}).pipe(rimraf({force: true}));
+    return gulp.src(paths.toDelete, {read: false}).pipe(rimraf({force: true}));
 });
 
 // entry point - run tasks in a sequence

@@ -1,4 +1,4 @@
-import {it, describe, expect} from 'angular2/testing';
+import {it, xit, describe, expect} from 'angular2/testing';
 
 export function main() {
   describe('universal truths', () => {

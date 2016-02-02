@@ -19,7 +19,7 @@ export function main() {
 
     it('subscription is called when dispatching actions', () => {
 
-      AppStore appStore = createSimpleAppStore();
+      AppStore appStore = <AppStore>createSimpleAppStore();
 
       let testCounter = 0;
       appStore.subscribe(state => testCounter = state);
@@ -31,7 +31,7 @@ export function main() {
 
     it('createDispatcher works as expected', () => {
 
-      AppStore appStore = createSimpleAppStore();
+      AppStore appStore = <AppStore>createSimpleAppStore();
 
       let testCounter = 0;
       appStore.subscribe(state => testCounter = state);
