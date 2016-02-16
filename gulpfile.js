@@ -6,7 +6,7 @@ var tsc = require('gulp-typescript');
 var paths = {
     dist: './dist',
     sourceFiles: ['./src/*'],
-    toDelete: ['./dist/src','./dist/test'],
+    toDelete: ['./dist/src','./dist/test', './dist/app'],
     distSourcesFiles: ['./dist/src/*']
 };
 

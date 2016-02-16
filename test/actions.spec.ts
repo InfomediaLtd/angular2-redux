@@ -7,7 +7,7 @@ class SomeActions extends Actions {
     someAction2(data) { return {type:"2",data} }
 }
 const createAppStoreMock = () => {
-  AppStore appStoreMock = new AppStore({});
+  const appStoreMock:AppStore = new AppStore({});
   spyOn(appStoreMock, "dispatch");
   return appStoreMock;
 }
@@ -29,7 +29,7 @@ export function main() {
 
       var someActions = new SomeActions();
 
-      AppStore appStoreMock = <AppStore>createAppStoreMock();
+      let appStoreMock:AppStore = <AppStore>createAppStoreMock();
       const dispatcherFunction = someActions.createDispatcher(
         appStoreMock,
         someActions.someAction1

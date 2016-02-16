@@ -5,7 +5,7 @@ import * as thunkMiddleware from "redux-thunk"
 /**
  * Factory for app store
  */
-export function createAppStoreFactory(reducers) {
+export function createAppStoreFactory(reducers, additionalMiddlewares=[]) {
     return () => {
 
         /* tslint:disable */
@@ -19,7 +19,7 @@ export function createAppStoreFactory(reducers) {
             thunkMiddlewareToUse = thunkMiddlewareToUse.default;
         }
 
-        const middlewareEnhancer = applyMiddleware(thunkMiddlewareToUse);
+        const middlewareEnhancer = applyMiddleware(thunkMiddlewareToUse,...additionalMiddlewares);
         const enhancers = compose(middlewareEnhancer, applyDevTools());
         const createStoreWithEnhancers = enhancers(createStore);
 

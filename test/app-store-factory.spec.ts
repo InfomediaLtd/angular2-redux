@@ -39,6 +39,24 @@ export function main() {
         expect(appStore.getState()).toEqual(2);
     });
 
+    it('Supports additional middleware', () => {
+
+        let counterInsideLogger = 0;
+        const logger = store => next => action => {
+          counterInsideLogger++;
+          return next(action);
+        }
+
+        const f = createAppStoreFactory(reducer, [logger]);
+        const appStore = f();
+        appStore.dispatch((dispatch) => {
+            dispatch({type:"inc"});
+            dispatch({type:"inc"});
+        });
+        expect(appStore.getState()).toEqual(2);
+        expect(counterInsideLogger).toEqual(2);
+    });
+
   });
 
 };
