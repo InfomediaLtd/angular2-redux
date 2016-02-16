@@ -5,7 +5,7 @@ import * as thunkMiddleware from "redux-thunk"
 /**
  * Factory for app store
  */
-export function createAppStoreFactory(reducers, additionalMiddlewares=[]) {
+export function createAppStoreFactory(reducers, additionalMiddlewares = []) {
     return () => {
 
         /* tslint:disable */
