@@ -32,44 +32,45 @@ It is recommended to create the app store in a factory, for supporting redux (an
 ```js
 import {AppStore} from "angular2-redux";
 import {bootstrap} from "angular2/platform/browser";
-//...
+// create factory to be called once angular has been bootstrapped
 const appStoreFactory = () => {
     let reduxAppStore;
-    // create redux app store with reducers and middleware  
+    // create redux store
     // ...
-    return new AppStore(reduxAppStore);
+    return new AppStore(reduxStore);
 };
-import {AppStore} from "angular2-redux";
-import {bootstrap} from "angular2/platform/browser";
-//...
+// bootstrap angular
 bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
-Another option is to use the provided factory, by passing in your reducers (one or more) and optional middleware. This factory supports the redux dev tools and the thunk middleware out of the box.
+Another option is to use the provided factory, by passing in your reducers (one or more) and optional middlewares. This factory supports the [thunk middleware](https://github.com/gaearon/redux-thunk) and the [redux dev tools Chrome extension](https://github.com/zalmoxisus/redux-devtools-extension) out of the box.
 
 Simple creation with a single reducer:
 ```js
 import {AppStore,createAppStoreFactory} from "angular2-redux";
 //...
+// create app store factory
 const appStoreFactory = createAppStoreFactory(counterReducer);
+bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
 Creation with multiple reducers and additional middleware
 ```js
 import {AppStore,createAppStoreFactory} from "angular2-redux";
 //...
+// my logger middleware
 const loggerMiddleware = store => next => action => {
-  console.log('dispatching', action)
-  let result = next(action)
-  console.log('next state', store.getState())
-  return result
+  console.log('dispatching', action);
+  return next(action);
 }
+// create app store factory
 const appStoreFactory = createAppStoreFactory({reducer1,reducer2},[loggerMiddleware]);
+bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
 ### Action Creators
 
-The Actions superclass for action creators lets you bind the app store dispatch method to any action. You can use this helper function to avoid having a local property for the app store and the actions inside your Angular components.
+The Actions is intended to be subclassed by action creators. It lets you bind the app store dispatch method to any action. You can use this helper function to avoid having a local property for the app store and the actions inside your Angular components.
 
 Assuming MyActions class extends Actions you can use it like this:
 ```js
