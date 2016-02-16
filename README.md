@@ -64,7 +64,7 @@ const loggerMiddleware = store => next => action => {
   console.log('next state', store.getState())
   return result
 }
-const appStoreFactory = createAppStoreFactory({redoucer1,reducer2},[loggerMiddleware]);
+const appStoreFactory = createAppStoreFactory({reducer1,reducer2},[loggerMiddleware]);
 ```
 
 ### Action Creators
