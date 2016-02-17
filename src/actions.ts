@@ -14,6 +14,10 @@ export class Actions {
     }
 
     public createDispatcher(action:(...n:any[])=>any, appStore?:AppStore):(...n)=>void {
+        if (action && appStore && action instanceof AppStore) {
+            // backwards compatibility for version 1.1.0
+            [action, appStore] = [ <any> appStore, <any> action ];
+        }
         if (!appStore && !this.appStore) {
           throw new Error("Can't find AppStore for dispatching action");
         }
