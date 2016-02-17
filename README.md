@@ -80,10 +80,19 @@ Assuming MyActions class extends Actions you can use it like this:
 })
 export class MyComponent {
   private someAction;
-  constructor(appStore:AppStore, myActions:MyActions) {
-    this.someAction = counterActions.createDispatcher(appStore, myActions.someAction);
+  constructor(myActions:MyActions) {
+    this.someAction = myActions.createDispatcher(myActions.someAction);
   }
 }
+```
+
+If you want your actions pure or decoupled from the app store (in case you're using multiple app stores), you can pass the app store in the createDispatcher function:
+```js
+constructor(myActions:MyActions, appStore:AppStore) {
+  this.someAction = myActions.createDispatcher(myActions.someAction, appStore);
+}
+```
+
 ```
 
 ### Usage example

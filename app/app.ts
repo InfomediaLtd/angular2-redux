@@ -25,10 +25,10 @@ export class AppComponent {
 
     constructor(appStore:AppStore, counterActions:CounterActions) {
 
-      this.inc = counterActions.createDispatcher(appStore, counterActions.increment);
-      this.dec = counterActions.createDispatcher(appStore, counterActions.decrement);
-      this.incBy = counterActions.createDispatcher(appStore, counterActions.incrementBy);
-      this.decBy = counterActions.createDispatcher(appStore, counterActions.decrementBy);
+      this.inc = counterActions.createDispatcher(counterActions.increment);
+      this.dec = counterActions.createDispatcher(counterActions.decrement);
+      this.incBy = counterActions.createDispatcher(counterActions.incrementBy);
+      this.decBy = counterActions.createDispatcher(counterActions.decrementBy);
       this.counter = appStore.getState().counter;
 
       appStore.subscribe(state => this.counter = state.counter);

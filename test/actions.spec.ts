@@ -6,6 +6,10 @@ class SomeActions extends Actions {
     someAction1(data) { return {type:"1",data} }
     someAction2(data) { return {type:"2",data} }
 }
+class SomeMoreActions extends Actions {
+    constructor(appStore:AppStore) { super(appStore) }
+    someAction(data) { return {type:"a",data} }
+}
 const createAppStoreMock = () => {
   const appStoreMock:AppStore = new AppStore({});
   spyOn(appStoreMock, "dispatch");
@@ -19,8 +23,7 @@ export function main() {
     it('should create dispatcher function', () => {
       var someActions = new SomeActions();
       const dispatcherFunction = someActions.createDispatcher(
-        createAppStoreMock(),
-        someActions.someAction1
+        someActions.someAction1,createAppStoreMock()
       );
       expect(dispatcherFunction()).toEqual(undefined);
     });
@@ -31,8 +34,7 @@ export function main() {
 
       let appStoreMock:AppStore = <AppStore>createAppStoreMock();
       const dispatcherFunction = someActions.createDispatcher(
-        appStoreMock,
-        someActions.someAction1
+        someActions.someAction1,appStoreMock
       );
 
       dispatcherFunction("a");
@@ -44,9 +46,23 @@ export function main() {
       expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: "1",data: "a"});
       expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: "1",data: "b"});
 
-      someActions.createDispatcher(appStoreMock,someActions.someAction2)("c");
+      someActions.createDispatcher(someActions.someAction2,appStoreMock)("c");
       expect(dispatchSpy.calls.argsFor(2)[0]).toEqual({type: "2",data: "c"});
 
+    });
+
+    it('dispatcher function should work with injected app store', () => {
+
+      let appStoreMock:AppStore = <AppStore>createAppStoreMock();
+      var someActions = new SomeMoreActions(appStoreMock);
+      const dispatcherFunction = someActions.createDispatcher(someActions.someAction);
+
+      dispatcherFunction("yo");
+
+      const dispatchSpy = appStoreMock.dispatch;
+      expect(dispatchSpy).toHaveBeenCalled();
+      expect(dispatchSpy.calls.count()).toEqual(1);
+      expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: "a",data: "yo"});
     });
   });
 
