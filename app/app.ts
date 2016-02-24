@@ -1,5 +1,5 @@
 import {CounterActions} from "./counter-actions";
-import {Component} from 'angular2/core'
+import {Component,OnDestroy} from 'angular2/core'
 import {AppStore} from "../src/index";
 
 @Component({
@@ -15,13 +15,15 @@ import {AppStore} from "../src/index";
         <hr/>
     `
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
 
     private counter;
     private inc;
     private dec;
     private incBy;
     private decBy;
+
+    private unsubscribeFromStore:()=>void;
 
     constructor(appStore:AppStore, counterActions:CounterActions) {
 
@@ -31,6 +33,8 @@ export class AppComponent {
       this.decBy = counterActions.createDispatcher(counterActions.decrementBy);
       this.counter = appStore.getState().counter;
 
-      appStore.subscribe(state => this.counter = state.counter);
+      this.unsubscribeFromStore = appStore.subscribe(state => this.counter = state.counter);
     }
+
+    public ngOnDestroy() { this.unsubscribeFromStore(); }
 }

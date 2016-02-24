@@ -19,11 +19,20 @@ This library includes a wrapper for the redux store. Create the wrapper AppStore
 new AppStore(reduxAppStore);
 ```
 
-All redux's [store methods](http://redux.js.org/docs/basics/Store.html) are supported, with the additional benefit of getting the state passed into subscribers:
+All redux's [store methods](http://redux.js.org/docs/basics/Store.html) are supported, with the additional benefit of getting the state passed into subscribers. Here is an example of a sample component using dependency injection to get the store, subscribe to it and clean up the subscription when it is destroyed:
 ```js
-appStore.subscribe(state => {
-  // do something with state
-});
+export class SomeComponent implements OnDestroy {
+  private unsubscribe:()=>void;
+  constructor(appStore:AppStore) {
+    this.unsubscribe = appStore.subscribe(state => {
+      // do something with state
+    });
+  });
+  public ngOnDestroy() {
+    // unsubscribe when the component is destroyed
+    this.unsubscribe();
+  }
+}
 ```
 
 ### Bootstrapping
