@@ -27,7 +27,7 @@ export class SomeComponent implements OnDestroy {
     this.unsubscribe = appStore.subscribe(state => {
       // do something with state
     });
-  });
+  })
   public ngOnDestroy() {
     // unsubscribe when the component is destroyed
     this.unsubscribe();
