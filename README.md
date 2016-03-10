@@ -52,7 +52,7 @@ const appStoreFactory = () => {
 bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
-Another option is to use the provided factory, by passing in your reducers (one or more) and optional middlewares. This factory supports the [thunk middleware](https://github.com/gaearon/redux-thunk) and the [redux dev tools Chrome extension](https://github.com/zalmoxisus/redux-devtools-extension) out of the box.
+Another option is to use the provided factory, by passing in your reducers (one or more) and optional middlewares. This factory supports the [thunk middleware](https://github.com/gaearon/redux-thunk) and the [redux dev tools Chrome extension](https://github.com/zalmoxisus/redux-devtools-extension) out of the box. To turn on the dev tools pass the debug param in the URL query string (http://...?debug=true)
 
 Simple creation with a single reducer:
 ```js
