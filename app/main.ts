@@ -5,7 +5,7 @@ import "bootstrap/css/bootstrap.css!css"
 import {bootstrap} from "angular2/platform/browser";
 import {provide} from "angular2/core";
 import {AppComponent} from "./app";
-import {AppStore,createAppStoreFactory} from "../src/index";
+import {AppStore,createAppStoreFactoryWithOptions} from "../src/index";
 
 import counterReducer from "./counter-reducer"
 import {CounterActions} from "./counter-actions";
@@ -16,7 +16,11 @@ const logger = store => next => action => {
   console.log('next state', store.getState())
   return result
 }
-const appStoreFactory = createAppStoreFactory(counterReducer,[logger]);
+const appStoreFactory = createAppStoreFactoryWithOptions({
+                          reducers:counterReducer,
+                          additionalMiddlewares:[logger],
+                          debug:true
+                        });
 
 bootstrap(AppComponent,
     [

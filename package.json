@@ -65,7 +65,7 @@
     "tsc": "^1.20150623.0",
     "tslint": "^3.2.1",
     "tslint-stylish": "^2.1.0-beta",
-    "typescript": "^1.7.5",
+    "typescript": "^1.8",
     "zone.js": "^0.5.15"
   },
   "config": {
@@ -88,7 +88,7 @@
       "zone.js": "npm:zone.js@^0.5.15"
     },
     "devDependencies": {
-      "typescript": "npm:typescript@^1.6.2"
+      "typescript": "npm:typescript@^1.8"
     }
   }
 }

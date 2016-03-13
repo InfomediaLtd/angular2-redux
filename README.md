@@ -63,9 +63,9 @@ const appStoreFactory = createAppStoreFactory(counterReducer);
 bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
-Creation with multiple reducers and additional middleware
+Creation with more options: multiple reducers, additional middleware, debugging
 ```js
-import {AppStore,createAppStoreFactory} from "angular2-redux";
+import {AppStore,createAppStoreFactoryWithOptions} from "angular2-redux";
 //...
 // my logger middleware
 const loggerMiddleware = store => next => action => {
@@ -73,7 +73,11 @@ const loggerMiddleware = store => next => action => {
   return next(action);
 }
 // create app store factory
-const appStoreFactory = createAppStoreFactory({reducer1,reducer2},[loggerMiddleware]);
+const appStoreFactory = createAppStoreFactoryWithOptions({
+                          reducers:{reducer1,reducer2},
+                          additionalMiddlewares:[loggerMiddleware],
+                          debug:true // accepts a function as well
+                        });
 bootstrap(MyAppComponent,[provide(AppStore, { useFactory: appStoreFactory })]);
 ```
 
