@@ -1,6 +1,6 @@
 import {it, describe, expect} from 'angular2/testing';
 import {AppStore} from "../src/app-store";
-import {createAppStoreFactory} from "../src/app-store-factory";
+import {createAppStoreFactory,createAppStoreFactoryWithOptions,applyDevTools} from "../src/app-store-factory";
 
 const reducer = (state=0,action) => {
     if (action.type=="inc") {
@@ -12,7 +12,41 @@ const reducer = (state=0,action) => {
 
 export function main() {
 
-  describe('createAppStoreFactory', () => {
+  describe('applyDevTools', () => {
+
+    it('applies debug options properly', () => {
+
+      const wrapper = {
+        devToolsMiddleware: ()=>{}
+      };
+      spyOn(wrapper, "devToolsMiddleware");
+      const devToolsMiddlewareSpy = wrapper.devToolsMiddleware;
+
+      window["devToolsExtension"]= ()=>wrapper.devToolsMiddleware;
+
+      // specifying debug option
+      applyDevTools(true)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(1);
+      applyDevTools(false)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(1);
+
+      // using function to specify debug option
+      applyDevTools(()=>true)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
+      applyDevTools(()=>false)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
+
+      // not specifying
+      applyDevTools()();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
+      applyDevTools(undefined)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
+      applyDevTools(null)();
+      expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
+
+  });
+
+  describe('createAppStoreFactoryWithOptions', () => {
 
     it('returns a function that creates an AppStore', () => {
         const f = createAppStoreFactory(reducer);
@@ -23,14 +57,14 @@ export function main() {
     });
 
     it('Supports multiple reducers', () => {
-        const f = createAppStoreFactory({a:reducer,b:reducer});
+        const f = createAppStoreFactoryWithOptions({reducers:{a:reducer,b:reducer}});
         const appStore = f();
         appStore.dispatch({type:"inc"});
         expect(appStore.getState()).toEqual({a:1,b:1});
     });
 
     it('Supports thunks', () => {
-        const f = createAppStoreFactory(reducer);
+        const f = createAppStoreFactoryWithOptions({reducers:reducer});
         const appStore = f();
         appStore.dispatch((dispatch) => {
             dispatch({type:"inc"});
@@ -47,7 +81,10 @@ export function main() {
           return next(action);
         }
 
-        const f = createAppStoreFactory(reducer, [logger]);
+        const f = createAppStoreFactoryWithOptions({
+                    reducers:reducer,
+                    additionalMiddlewares: [logger]
+                  });
         const appStore = f();
         appStore.dispatch((dispatch) => {
             dispatch({type:"inc"});
