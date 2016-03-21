@@ -37,7 +37,6 @@
       "no-shadowed-variable": true,
       "no-string-literal": true,
       "no-switch-case-fall-through": true,
-      "no-trailing-comma": true,
       "no-unused-expression": true,
       "no-unused-variable": true,
       "no-unreachable": true,
@@ -66,22 +65,6 @@
         "check-module",
         "check-seperator",
         "check-typecast"
-      ],
-      "no-constant-condition": true,
-      "valid-typeof": true,
-      "use-isnan": true,
-      "no-duplicate-case": true,
-      "no-sparse-array": true,
-      "no-extra-semi": true,
-      "no-extra-boolean-cast": true,
-      "no-ex-assign": true,
-      "no-unexpected-multiline": true,
-      "no-invalid-regexp": true,
-      "no-inner-declarations": [true, "both"],
-      "no-regex-spaces": true,
-      "no-empty-character-class": true,
-      "no-control-regex": true,
-      "no-irregular-whitespace": true,
-      "valid-jsdoc": true
+      ]
     }
 }

@@ -1,4 +1,5 @@
 import "zone.js";
+import "zone.js/dist/long-stack-trace-zone";
 import "reflect-metadata";
 import "bootstrap/css/bootstrap.css!css"
 
