@@ -45,6 +45,7 @@ export function main() {
       expect(devToolsMiddlewareSpy.calls.count()).toEqual(2);
 
     });
+
   });
 
   describe('createAppStoreFactoryWithOptions', () => {
