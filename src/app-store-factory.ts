@@ -35,7 +35,7 @@ export function createAppStoreFactory(reducers?, additionalMiddlewares?) {
 }
 
 export function createAppStoreFactoryWithOptions({
-                    reducers = {},
+                    reducers,
                     additionalMiddlewares = [],
                     debug = undefined
                   }) {
@@ -51,8 +51,8 @@ export function createAppStoreFactoryWithOptions({
 
         let thunkMiddlewareToUse = thunkMiddleware;
         // Fix for import issues
-        if (thunkMiddlewareToUse && thunkMiddlewareToUse.default) {
-            thunkMiddlewareToUse = thunkMiddlewareToUse.default;
+        if (thunkMiddlewareToUse && thunkMiddlewareToUse["default"]) {
+            thunkMiddlewareToUse = thunkMiddlewareToUse["default"];
         }
 
         const middlewareEnhancer = applyMiddleware(thunkMiddlewareToUse,...additionalMiddlewares);
