@@ -27,15 +27,15 @@ System.config({
   },
 
   map: {
-    "angular2": "npm:angular2@2.0.0-beta.11",
+    "angular2": "npm:angular2@2.0.0-beta.14",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
     "css": "github:systemjs/plugin-css@0.1.20",
-    "redux": "npm:redux@3.3.1",
+    "redux": "npm:redux@3.4.0",
     "redux-thunk": "npm:redux-thunk@2.0.1",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "typescript": "npm:typescript@1.8.9",
-    "zone.js": "npm:zone.js@0.6.4",
+    "zone.js": "npm:zone.js@0.6.10",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -75,10 +75,10 @@ System.config({
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "github:components/jquery@2.2.1"
     },
-    "npm:angular2@2.0.0-beta.11": {
+    "npm:angular2@2.0.0-beta.14": {
       "reflect-metadata": "npm:reflect-metadata@0.1.2",
-      "rxjs": "npm:rxjs@5.0.0-beta.2",
-      "zone.js": "npm:zone.js@0.6.4"
+      "rxjs": "npm:rxjs@5.0.0-beta.5",
+      "zone.js": "npm:zone.js@0.6.10"
     },
     "npm:asn1.js@4.5.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -228,12 +228,12 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.6.1": {
+    "npm:lodash@4.9.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:loose-envify@1.1.0": {
-      "js-tokens": "npm:js-tokens@1.0.2",
+      "js-tokens": "npm:js-tokens@1.0.3",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
@@ -293,9 +293,9 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
     },
-    "npm:redux@3.3.1": {
-      "lodash": "npm:lodash@4.6.1",
-      "lodash-es": "npm:lodash-es@4.6.1",
+    "npm:redux@3.4.0": {
+      "lodash": "npm:lodash@4.9.0",
+      "lodash-es": "npm:lodash-es@4.9.0",
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -311,7 +311,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:rxjs@5.0.0-beta.2": {
+    "npm:rxjs@5.0.0-beta.5": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -339,7 +339,7 @@ System.config({
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
     },
-    "npm:zone.js@0.6.4": {
+    "npm:zone.js@0.6.10": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
