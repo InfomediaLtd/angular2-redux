@@ -1,5 +1,5 @@
 module.exports = function (config) {
-    config.set({
+    var configuration = {
         frameworks: ['jasmine', 'jspm'],
         plugins: [
           'karma-jspm',
@@ -18,6 +18,23 @@ module.exports = function (config) {
             {pattern: 'test/karma-test-shim.js', included: true, watched: false}
         ],
         reporters: ['mocha'],
-        browsers: ['Chrome']
-    })
+        browsers: ['Chrome'],
+        customLaunchers: {
+          Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+          }
+        },
+    };
+
+    if(process.env.TRAVIS){
+      configuration.browsers = ['Chrome_travis_ci'];
+      // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
+      // configuration.coverageReporter = {
+      //   type : 'lcovonly',
+      //   dir : 'coverage/'
+      // };
+    }
+
+    config.set(configuration);
 };
