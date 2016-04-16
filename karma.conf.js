@@ -18,7 +18,7 @@ module.exports = function (config) {
             {pattern: 'test/karma-test-shim.js', included: true, watched: false}
         ],
         reporters: ['mocha'],
-        browsers: ['Chrome'],
+        browsers: ['Chrome', 'ChromeCanary'],
         customLaunchers: {
           Chrome_travis_ci: {
             base: 'Chrome',
