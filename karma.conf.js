@@ -18,7 +18,7 @@ module.exports = function (config) {
             {pattern: 'test/karma-test-shim.js', included: true, watched: false}
         ],
         reporters: ['mocha'],
-        browsers: ['Chrome', 'ChromeCanary'],
+        browsers: ['Chrome'],
         customLaunchers: {
           Chrome_travis_ci: {
             base: 'Chrome',
@@ -27,13 +27,8 @@ module.exports = function (config) {
         },
     };
 
-    if(process.env.TRAVIS){
+    if(process.env.TRAVIS) {  
       configuration.browsers = ['Chrome_travis_ci'];
-      // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
-      // configuration.coverageReporter = {
-      //   type : 'lcovonly',
-      //   dir : 'coverage/'
-      // };
     }
 
     config.set(configuration);
