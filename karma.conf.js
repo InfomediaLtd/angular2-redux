@@ -1,5 +1,5 @@
 module.exports = function (config) {
-    var configuration = {
+    config.set({
         frameworks: ['jasmine', 'jspm'],
         plugins: [
           'karma-jspm',
@@ -18,18 +18,6 @@ module.exports = function (config) {
             {pattern: 'test/karma-test-shim.js', included: true, watched: false}
         ],
         reporters: ['mocha'],
-        browsers: ['Chrome'],
-        customLaunchers: {
-          Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-          }
-        },
-    };
-
-    if(process.env.TRAVIS) {  
-      configuration.browsers = ['Chrome_travis_ci'];
-    }
-
-    config.set(configuration);
+        browsers: ['Chrome']
+    })
 };
