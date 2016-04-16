@@ -23,7 +23,7 @@ export function applyDevTools(debug) {
   return isDebug ? window["devToolsExtension"]() : f => f;
 }
 /* tslint:enable */
-
+ 
 /**
  * Factory for app store
  */
