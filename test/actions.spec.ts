@@ -1,6 +1,7 @@
 import {it, describe, expect} from 'angular2/testing';
 import {Actions} from "../src/actions";
 import {AppStore} from "../src/app-store";
+import {createStore} from 'redux'
 
 class SomeActions extends Actions {
     someAction1(data) { return {type:"1",data} }
@@ -11,7 +12,7 @@ class SomeMoreActions extends Actions {
     someAction(data) { return {type:"a",data} }
 }
 const createAppStoreMock = () => {
-  const appStoreMock:AppStore = new AppStore({});
+  const appStoreMock:AppStore = new AppStore(createStore(state => state));
   spyOn(appStoreMock, "dispatch");
   return appStoreMock;
 }

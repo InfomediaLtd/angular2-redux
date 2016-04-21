@@ -3,6 +3,7 @@ import {Observable} from "rxjs/Observable";
 // ensure required operators are enabled
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/distinctUntilChanged";
+import "rxjs/add/observable/from";
 
 /**
  * Wrapper for app store
@@ -42,10 +43,7 @@ export class AppStore {
         this.createDispatcher = (actionCreator, context):(...n:any[])=>void => {
             return (...args) => store.dispatch(actionCreator.call(context, ...args));
         };
-        this._value = Observable.create(observer => {
-            observer.next(this.getState());
-            this.subscribe(state => observer.next(state));
-        });
+        this._value = Observable.from(store);
     }
 
     select<R>(keyOrSelector: ((state: any) => R) | string | number | symbol): Observable<R> {
