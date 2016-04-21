@@ -34,6 +34,7 @@ System.config({
     "redux": "npm:redux@3.4.0",
     "redux-thunk": "npm:redux-thunk@2.0.1",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "rxjs": "npm:rxjs@5.0.0-beta.6",
     "typescript": "npm:typescript@1.8.9",
     "zone.js": "npm:zone.js@0.6.10",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -312,6 +313,10 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:rxjs@5.0.0-beta.5": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:rxjs@5.0.0-beta.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
