@@ -46,10 +46,10 @@ export class AppStore {
         this._value = Observable.from(store);
     }
 
-    select<R>(keyOrSelector: ((state: any) => R) | string | number | symbol): Observable<R> {
+    public select<R>(keyOrSelector: ((state: any) => R) | string | number | symbol): Observable<R> {
         if (typeof keyOrSelector === "string" || typeof keyOrSelector === "number"
                 || typeof keyOrSelector === "symbol") {
-            return this._value.map(state => state[<string|number|symbol>keyOrSelector]).distinctUntilChanged();
+            return this._value.map(state => state[<string|number|symbol> keyOrSelector]).distinctUntilChanged();
         } else if (typeof keyOrSelector === "function") {
             return this._value.map(keyOrSelector).distinctUntilChanged();
         } else {
