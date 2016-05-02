@@ -17,7 +17,7 @@ export class AppStore {
     /**
      * subscribe to a callback with the state
      */
-    public subscribe:(subscribeFunction:(state)=>void)=>()=>void;
+    public subscribe:(subscriber:(state)=>void)=>()=>void;
     /**
      * Dispatch an action
      */
@@ -27,13 +27,14 @@ export class AppStore {
      */
     public createDispatcher:(actionCreator, context)=>(...n:any[])=>void;
 
-    private _value:Observable<any>;
+    public store$:Observable<any>;
 
     constructor(store:any) {
+        this.store$ = Observable.from(store);
         this.getState = () => {
             return store.getState();
         };
-        this.subscribe = (subscriber:(state)=>any) => {
+        this.subscribe = (subscriber:(state)=>void) => {
             // decorate the subscriber with the state passed in as a parameter
             return store.subscribe(() => subscriber(store.getState()));
         };
@@ -43,15 +44,14 @@ export class AppStore {
         this.createDispatcher = (actionCreator, context):(...n:any[])=>void => {
             return (...args) => store.dispatch(actionCreator.call(context, ...args));
         };
-        this._value = Observable.from(store);
     }
 
     public select<R>(keyOrSelector: ((state: any) => R) | string | number | symbol): Observable<R> {
         if (typeof keyOrSelector === "string" || typeof keyOrSelector === "number"
                 || typeof keyOrSelector === "symbol") {
-            return this._value.map(state => state[<string|number|symbol> keyOrSelector]).distinctUntilChanged();
+            return this.store$.map(state => state[<string|number|symbol> keyOrSelector]).distinctUntilChanged();
         } else if (typeof keyOrSelector === "function") {
-            return this._value.map(keyOrSelector).distinctUntilChanged();
+            return this.store$.map(keyOrSelector).distinctUntilChanged();
         } else {
             throw new TypeError(`Unknown Parameter Type: `
                 + `Expected type of function or valid key type, got ${typeof keyOrSelector}`);
