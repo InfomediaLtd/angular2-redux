@@ -1,4 +1,4 @@
-import {it, describe, expect} from 'angular2/testing';
+import {it, describe, expect} from '@angular/testing';
 import {AppStore} from "../src/app-store";
 import {createStore} from "redux";
 import {Observable} from 'rxjs/Observable';

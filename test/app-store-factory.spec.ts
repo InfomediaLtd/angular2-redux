@@ -1,4 +1,4 @@
-import {it, describe, expect} from 'angular2/testing';
+import {it, describe, expect} from '@angular/testing';
 import {AppStore} from "../src/app-store";
 import {createAppStoreFactory,createAppStoreFactoryWithOptions,applyDevTools} from "../src/app-store-factory";
 

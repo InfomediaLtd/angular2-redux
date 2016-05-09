@@ -1,10 +1,9 @@
 import "zone.js";
-import "zone.js/dist/long-stack-trace-zone";
 import "reflect-metadata";
 import "bootstrap/css/bootstrap.css!css"
 
-import {bootstrap} from "angular2/platform/browser";
-import {provide} from "angular2/core";
+import {bootstrap} from "@angular/platform-browser-dynamic";
+import {provide} from "@angular/core";
 import {AppComponent} from "./app";
 import {AppStore,createAppStoreFactoryWithOptions} from "../src/index";
 

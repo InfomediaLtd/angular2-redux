@@ -8,18 +8,14 @@ Error.stackTraceLimit = Infinity;
 __karma__.loaded = function () {
 };
 
-// Since beta-2
-System.import('angular2/testing').then(function(testing) {
-    return System.import('angular2/platform/testing/browser').then(function(testing_platform_browser) {
+// Since rc.1
+// System.import('test/karma-test-setup.ts')
+System.import('@angular/testing').then(function(testing) {
+    return System.import('@angular/platform-browser-dynamic/testing').then(function(testing_platform_browser) {
         testing.setBaseTestProviders(testing_platform_browser.TEST_BROWSER_PLATFORM_PROVIDERS,
                                      testing_platform_browser.TEST_BROWSER_APPLICATION_PROVIDERS);
     });
 })
-// This worked until beta-2
-// System.import('angular2/src/platform/browser/browser_adapter')
-//     .then(function (browser_adapter) {
-//         browser_adapter.BrowserDomAdapter.makeCurrent();
-//     })
     .then(function () {
         // console.log("Importing test.");
         return System.import('test')

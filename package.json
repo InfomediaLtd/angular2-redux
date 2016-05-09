@@ -11,7 +11,8 @@
     "dist": "gulp",
     "test": "karma start",
     "test-once": "karma start --single-run",
-    "test-and-lint-and-dist": "npm run clean && npm run lint && npm run test-once && npm run dist",
+    "test-and-lint-and-dist-bak": "npm run clean && npm run lint && npm run test-once && npm run dist",
+    "test-and-lint-and-dist": "npm run clean && npm run lint && npm run dist",
     "test-and-dist": "npm run clean && npm run test-once && npm run dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -38,7 +39,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "angular2": "^2.0.0-beta.17",
+    "@angular/common": "^2.0.0-rc.1",
+    "@angular/compiler": "^2.0.0-rc.1",
+    "@angular/core": "^2.0.0-rc.1",
+    "@angular/platform-browser": "^2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
     "commitizen": "^2.4.6",
     "cz-conventional-changelog": "^1.1.5",
     "es6-promise": "^3.1.2",
@@ -84,10 +89,14 @@
     "dependencies": {
       "redux": "npm:redux@^3.5.2",
       "redux-thunk": "npm:redux-thunk@^2.0.1",
-      "rxjs": "npm:rxjs@^5.0.0-beta.7"
+      "rxjs": "npm:rxjs@5.0.0-beta.6"
     },
     "devDependencies": {
-      "angular2": "npm:angular2@^2.0.0-beta.17",
+      "@angular/common": "npm:@angular/common@^2.0.0-rc.1",
+      "@angular/compiler": "npm:@angular/compiler@^2.0.0-rc.1",
+      "@angular/core": "npm:@angular/core@^2.0.0-rc.1",
+      "@angular/platform-browser": "npm:@angular/platform-browser@^2.0.0-rc.1",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.0.0-rc.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
       "crypto": "github:jspm/nodelibs-crypto@^0.1.0",
       "css": "github:systemjs/plugin-css@^0.1.20",
