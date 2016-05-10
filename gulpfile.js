@@ -5,7 +5,7 @@ var tsc = require('gulp-typescript');
 
 var paths = {
     dist: './dist',
-    sourceFiles: ['./src/*'],
+    sourceFiles: ['./src/**/*.ts'],
     toDelete: ['./dist/src','./dist/test', './dist/app'],
     distSourcesFiles: ['./dist/src/*']
 };
@@ -20,7 +20,7 @@ gulp.task('copySources', function(){
 
 gulp.task('tsc', function () {
     var tsProject = tsc.createProject('tsconfig.json', {outDir:"dist",declaration:true});
-    var tsResult = tsProject.src().pipe(tsc(tsProject));
+    var tsResult = gulp.src(paths.sourceFiles).pipe(tsc(tsProject));
     tsResult.pipe(gulp.dest(paths.dist));
     return tsResult.dts.pipe(gulp.dest(paths.dist));
 });
@@ -37,9 +37,9 @@ gulp.task('cleanup', function () {
 gulp.task('default', function (callback) {
     runSequence(
         'clean',
-        'copySources',
+        //'copySources',
         'tsc',
-        'copy',
+        //'copy',
         'cleanup',
         function (error) {
             if (error) {
