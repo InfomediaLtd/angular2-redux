@@ -14,21 +14,16 @@ gulp.task('clean', function () {
     return gulp.src(paths.dist, {read: false}).pipe(rimraf({force: true}));
 });
 
-gulp.task('copySources', function(){
-    return gulp.src(paths.sourceFiles).pipe(gulp.dest(paths.dist));
-});
-
 gulp.task('tsc', function () {
     var tsProject = tsc.createProject('tsconfig.json', {outDir:"dist",declaration:true});
-    var tsResult = gulp.src(paths.sourceFiles).pipe(tsc(tsProject));
+    var tsResult = tsProject.src().pipe(tsc(tsProject));
     tsResult.pipe(gulp.dest(paths.dist));
     return tsResult.dts.pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('copy', function(){
-    return gulp.src(paths.distSourcesFiles).pipe(gulp.dest(paths.dist));
+gulp.task('copyToDist', function(){
+    return gulp.src("dist/src/*").pipe(gulp.dest(paths.dist));
 });
-
 gulp.task('cleanup', function () {
     return gulp.src(paths.toDelete, {read: false}).pipe(rimraf({force: true}));
 });
@@ -37,9 +32,8 @@ gulp.task('cleanup', function () {
 gulp.task('default', function (callback) {
     runSequence(
         'clean',
-        //'copySources',
         'tsc',
-        //'copy',
+        'copyToDist',
         'cleanup',
         function (error) {
             if (error) {

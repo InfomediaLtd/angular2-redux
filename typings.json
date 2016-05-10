@@ -1,6 +1,6 @@
 {
-  "ambientDependencies": {
-    "redux": "github:andrew-w-ross/typings-redux#bccd372fe4de8c4d4782e1c347f8ed62d9b0cae8",
-    "redux-thunk": "github:DefinitelyTyped/DefinitelyTyped/redux-thunk/redux-thunk.d.ts#75249b97104d00c1ca2451ac29369009a5f2b101"
+  "dependencies": {
+    "redux": "registry:npm/redux#3.0.6+20160214194820",
+    "redux-thunk": "registry:npm/redux-thunk#1.0.4+20160207154919"
   }
 }

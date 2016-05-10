@@ -10,11 +10,12 @@
     "declaration": false,
     "outDir": "build"
   },
-  "exclude": [
-    "jspm_packages",
-    "node_modules",
-    "dist",
-    "typings/main.d.ts",
-    "typings/main"
+  "files": [
+    "src/index.ts",
+    "src/app-store.ts",
+    "src/app-store-factory.ts",
+    "src/actions.ts",
+    "typings/browser.d.ts",
+    "node_modules/typescript/lib/lib.es6.d.ts"
   ]
 }
