@@ -6,6 +6,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "lint": "tslint src/**/*.ts -s node_modules/tslint-stylish -t stylish",
+    "typings": "typings install",
     "commit": "git-cz",
     "clean": "rimraf dist",
     "dist": "gulp",
