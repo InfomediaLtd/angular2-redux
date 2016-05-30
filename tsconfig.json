@@ -15,7 +15,7 @@
     "src/app-store.ts",
     "src/app-store-factory.ts",
     "src/actions.ts",
-    "typings/browser.d.ts",
+    "typings/index.d.ts",
     "node_modules/typescript/lib/lib.es6.d.ts"
   ]
 }
