@@ -75,6 +75,7 @@
     "tslint": "^3.2.1",
     "tslint-stylish": "^2.1.0-beta",
     "typescript": "^1.8",
+    "typings": "^1.0.4",
     "zone.js": "^0.6.12"
   },
   "config": {
