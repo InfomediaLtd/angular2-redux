@@ -1,6 +1,6 @@
 {
-  "dependencies": {
-    "redux": "registry:npm/redux",
-    "redux-thunk": "registry:npm/redux-thunk"
-  }
+    "globalDependencies": {
+        "redux": "registry:dt/redux",
+        "redux-thunk": "registry:dt/redux-thunk"
+    }
 }
