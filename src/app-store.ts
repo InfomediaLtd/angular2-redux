@@ -1,4 +1,4 @@
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 // ensure required operators are enabled
 import "rxjs/add/operator/map";
