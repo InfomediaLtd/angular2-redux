@@ -33,7 +33,6 @@ System.config({
     "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.1",
     "@angular/testing": "npm:@angular/testing@0.0.0-0",
-    "bootstrap": "github:twbs/bootstrap@3.3.6",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
     "css": "github:systemjs/plugin-css@0.1.21",
     "redux": "npm:redux@3.5.2",
@@ -77,9 +76,6 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
-    },
-    "github:twbs/bootstrap@3.3.6": {
-      "jquery": "npm:jquery@2.2.3"
     },
     "npm:@angular/common@0.0.0-0": {
       "@angular/core": "npm:@angular/core@0.0.0-0",

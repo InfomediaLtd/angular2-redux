@@ -99,7 +99,6 @@
       "@angular/core": "npm:@angular/core@^2.0.0-rc.1",
       "@angular/platform-browser": "npm:@angular/platform-browser@^2.0.0-rc.1",
       "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.0.0-rc.1",
-      "bootstrap": "github:twbs/bootstrap@^3.3.6",
       "crypto": "github:jspm/nodelibs-crypto@^0.1.0",
       "css": "github:systemjs/plugin-css@^0.1.20",
       "reflect-metadata": "npm:reflect-metadata@^0.1.3",
