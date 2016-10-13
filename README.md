@@ -37,7 +37,7 @@ export class SomeComponent implements OnDestroy {
 
 ### Bootstrapping
 
-It is recommended to create the app store in a factory, for supporting redux (and the redux dev tools) inside Angular2's zone. That means the app store will only be created once angular is bootstrapped:
+It is recommended to create the app store in a factory, for supporting redux (and the redux dev tools) inside Angular2's zone. That means the app store will only be created after angular is bootstrapped:
 ```js
 import {AppStore} from "angular2-redux";
 import {bootstrap} from "angular2/platform/browser";
