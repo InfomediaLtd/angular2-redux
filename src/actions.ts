@@ -5,7 +5,7 @@ import {AppStore} from "./app-store";
  */
 export class Actions {
 
-    private appStore:AppStore = null;
+    protected appStore:AppStore = null;
 
     constructor(appStore:AppStore) {
         this.appStore = appStore;
