@@ -1,32 +1,12 @@
-import "zone.js";
-import "reflect-metadata";
+import 'zone.js'
+import 'reflect-metadata'
+
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic'
+import {AppModule} from './app.module'
+
 import "bootstrap/css/bootstrap.css!css"
 
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {provide} from "@angular/core";
-import {AppComponent} from "./app";
-import {AppStore,createAppStoreFactoryWithOptions} from "../src/index";
-
-import counterReducer from "./counter-reducer"
-import {CounterActions} from "./counter-actions";
-
-const logger = store => next => action => {
-  console.log('dispatching', action)
-  let result = next(action)
-  console.log('next state', store.getState())
-  return result
-}
-const appStoreFactory = createAppStoreFactoryWithOptions({
-                          reducers:counterReducer,
-                          additionalMiddlewares:[logger],
-                          debug:true
-                        });
-
-bootstrap(AppComponent,
-    [
-        provide(AppStore, { useFactory: appStoreFactory }),
-        CounterActions
-    ]);
+platformBrowserDynamic().bootstrapModule(AppModule);
 
 /* tslint:disable */
 // polyfill for Object.assign (not part of TS yet)
