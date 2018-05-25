@@ -1,6 +1,0 @@
-{
-    "globalDependencies": {
-        "redux": "registry:dt/redux",
-        "redux-thunk": "registry:dt/redux-thunk"
-    }
-}
