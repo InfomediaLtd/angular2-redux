@@ -1,21 +1,20 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES5",
-    "module": "commonjs",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "declaration": false,
-    "outDir": "build"
-  },
-  "files": [
-    "src/index.ts",
-    "src/app-store.ts",
-    "src/app-store-factory.ts",
-    "src/actions.ts",
-    "typings/index.d.ts",
-    "node_modules/typescript/lib/lib.es6.d.ts"
-  ]
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
 }
