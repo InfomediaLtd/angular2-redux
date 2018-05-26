@@ -1,0 +1,26 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+notifications:
+  email: false
+node_js:
+  - '8'
+before_install:
+  - npm i -g npm@^5.6.0
+  - npm install -g @angular/cli 
+before_script:
+  - npm prune
+script:
+  - npm install
+  - ng lint
+  - npm run packagr
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
