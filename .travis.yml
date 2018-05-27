@@ -9,20 +9,16 @@ branches:
 notifications:
   email: false
 node_js:
-  - '4'
+  - '8'
 before_install:
-  - npm i -g npm@^2.0.0
+  - npm i -g npm@^5.6.0
+  - npm install -g @angular/cli 
 before_script:
   - npm prune
 script:
-  - jspm registry export github
-  - jspm config registries.github.remote https://github.jspm.io
-  - jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
-  - jspm config registries.github.maxRepoSize 100
-  - jspm config registries.github.handler jspm-github
-  - jspm install
-  - npm run typings
-  - npm run dist
+  - npm install
+  - ng lint
+  - npm run packagr
 after_success:
   - npm run semantic-release
 branches:
