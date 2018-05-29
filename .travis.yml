@@ -19,7 +19,6 @@ before_script:
 script:
   - npm install
   - ng lint
-  - ng test
   - npm run packagr
 after_success:
   - npm run semantic-release
