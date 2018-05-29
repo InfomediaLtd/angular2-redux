@@ -1,8 +1,10 @@
 import { AppStore } from './app-store';
+import { Injectable } from '@angular/core';
 
 /**
  * Abstract class to provide utility methods for action creators
  */
+@Injectable()
 export class Actions {
     public appStore;
     constructor(private _appStore: AppStore) {
