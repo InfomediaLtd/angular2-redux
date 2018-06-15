@@ -18,11 +18,11 @@ import { AppStore } from '../index';
 export class AppComponent implements OnDestroy {
   title = 'app';
 
-  private counter;
-  private inc;
-  private dec;
-  private incBy;
-  private decBy;
+  public counter;
+  public inc;
+  public dec;
+  public incBy;
+  public decBy;
 
   private unsubscribeFromStore: () => void;
 
