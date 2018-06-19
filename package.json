@@ -10,8 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "semantic-release": "semantic-release --prepare && npm publish dist",
-    "semantic-release1": "semantic-release pre && npm publish dist && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish dist && semantic-release post"
   },
   "dependencies": {
     "@angular/animations": "^6.0.0",
@@ -51,7 +50,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^2.4.5",
     "protractor": "~5.3.0",
-    "semantic-release": "^15.5.5",
+    "semantic-release": "^6.3.6",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
@@ -63,24 +62,6 @@
     "ghooks": {
       "pre-commit": "npm run build"
     }
-  },
-  "release-bak": {
-    "dryRun": true,
-    "pkgRoot": "dist",
-    "assets": [
-      "dist/*"
-    ],
-    "publish": [
-      {
-        "path": "@semantic-release/npm",
-        "npmPublish": true,
-        "pkgRoot": "dist"
-      },
-      {
-        "path": "@semantic-release/github",
-        "assets": "dist/*"
-      }
-    ]
   },
   "repository": {
     "type": "git",
