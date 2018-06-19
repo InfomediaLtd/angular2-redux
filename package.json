@@ -1,6 +1,6 @@
 {
   "name": "angular2-redux",
-  "version": "0.0.0-development",
+  "version": "5.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
