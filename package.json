@@ -63,6 +63,23 @@
       "pre-commit": "npm run build"
     }
   },
+  "release": {
+    "pkgRoot": "dist",
+    "assets": [
+      "dist/*"
+    ],
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true,
+        "pkgRoot": "dist"
+      },
+      {
+        "path": "@semantic-release/github",
+        "assets": "dist/*"
+      }
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Greentea1204/angular2-redux.git"
