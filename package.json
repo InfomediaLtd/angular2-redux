@@ -1,6 +1,5 @@
 {
   "name": "angular2-redux",
-  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish dist && semantic-release post",
+    "presemantic-release": "semantic-release pre",
+    "semantic-release": "npm publish dist",
+    "postsemantic-release": "semantic-release post",
     "semantic-release1": "semantic-release pre && npm publish dist && semantic-release post"
   },
   "dependencies": {
