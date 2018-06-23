@@ -1,6 +1,5 @@
 {
   "name": "angular2-redux",
-  "version": "5.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish dist && semantic-release post"
+    "semantic-release": "semantic-release pre && cat package.json && npm publish && semantic-release post"
   },
   "dependencies": {
     "@angular/animations": "^6.0.0",
