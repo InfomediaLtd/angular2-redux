@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && cp package.json dist && npm publish dist && semantic-release post"
+    "semantic-release": "cp dist/package.json . && semantic-release pre && cp package.json dist && cat dist/package.json && npm publish dist && semantic-release post"
   },
   "dependencies": {
     "@angular/animations": "^6.0.0",
