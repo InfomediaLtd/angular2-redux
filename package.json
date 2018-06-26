@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "commit": "git-cz",
-    "semantic-release": "cp dist/package.json . && semantic-release pre && cp package.json dist && cat dist/package.json && npm publish dist && semantic-release post"
+    "semantic-release": "semantic-release pre && cp package.json dist && cat dist/package.json && npm publish dist && semantic-release post"
   },
   "dependencies": {
     "@angular/animations": "^6.0.0",
@@ -65,5 +65,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/InfomediaLtd/angular2-redux.git"
-  }
+  },
+  "main": "bundles/angular2-redux.umd.js",
+  "module": "esm5/angular2-redux.js",
+  "es2015": "esm2015/angular2-redux.js",
+  "typings": "angular2-redux.d.ts",
+  "metadata": "angular2-redux.metadata.json"
 }
